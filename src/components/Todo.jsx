@@ -8,7 +8,7 @@ class Todo extends React.Component {
         this.state = {
             item: window.localStorage.getItem('items') ? JSON.parse(window.localStorage.getItem('items')) : [],
             name: '',
-            sectionTitle: "Todo App in React js",
+            sectionTitle: "Todo App in React js.",
             edit: false
         }
     }
@@ -77,7 +77,6 @@ class Todo extends React.Component {
                                     </form>
                                 </div>
                                 <div className="col-lg-12 mt-3">
-                                        {/* // Do something that could throw */}
                                         <DisplayTodo data={{ items: this.state.item, delete: this.delete, edit: this.edit }} />
                                     <p className="text-center btn btn-primary" onClick={this.removeAll}>Remove All</p>
                                 </div>
