@@ -8,7 +8,7 @@ class Todo extends React.Component {
         this.state = {
             item: window.localStorage.getItem('items') ? JSON.parse(window.localStorage.getItem('items')) : [],
             name: '',
-            sectionTitle: "Todo App in React js.",
+            sectionTitle: "Todo App in React js",
             edit: false
         }
     }
