@@ -1,0 +1,42 @@
+body{
+    background-color: #347C98;
+}
+h1,h2,h3,h4,h5,h6{
+    color: #FCCB1D;
+    margin: 0;
+}
+.todo-container{
+    height: auto;
+    /* background-color: rgb(226, 121, 121); */
+    /* padding: 1rem; */
+}
+.custom-input-field input[type=text]{
+    padding-right: 40px;
+    transition: 2s;
+}
+/* .custom-input-field input[type=text]:focus +i{
+    color: rgb(13 110 253 / 25%);
+} */
+.custom-input-field{
+    position: relative;
+}
+.custom-input-field i{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    padding: 5px 10px;
+    margin: auto;
+    text-align: center;
+    transition: 2s;
+    cursor: pointer;
+}
+.todolist{
+    background-color: #092834;
+    border-radius: 6px;
+}
+.todolist i{
+    color:#C21460;
+    margin: auto;
+    cursor: pointer;
+    text-align: center;
+}
