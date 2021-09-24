@@ -3,10 +3,6 @@
 const DisplayTodo = (props) => {
     // console.log(props.data.items);
     if(props.data.items){
-        if (5 === 5) {
-            // Simulate a JS error
-            throw new Error('I crashed!');
-          }
         return(
             <>
                 {
