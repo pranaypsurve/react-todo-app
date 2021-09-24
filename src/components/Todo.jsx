@@ -78,7 +78,9 @@ class Todo extends React.Component {
                                 Time : {this.state.currTime}
                             </div>
                         </div>
-                        <div className="col-lg-4">
+                    </div>
+                    <div className="row">
+                    <div className="col-lg-4">
                             <div className="features border-warning">
                                 <h2>Features - Todo App</h2>
                                 <ol className="m-0">
@@ -105,6 +107,7 @@ class Todo extends React.Component {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </section>
         );
