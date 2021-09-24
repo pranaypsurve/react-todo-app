@@ -1,5 +1,6 @@
 import React from "react";
 import DisplayTodo from "./DisplayTodo";
+import ErrorBoundary from './ErrorBoundary'
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import "./todo.css";
 class Todo extends React.Component {
@@ -40,11 +41,9 @@ class Todo extends React.Component {
     }
     edit = (id) => {
         this.setState({ edit: true });
-        console.log(id, "edit");
         let editableItem = this.state.item.filter((val, index) => {
             return id === index + val;
         });
-        // console.log(editableItem,"convert",JSON.stringify());
         this.setState({ name: editableItem.toString() });
         let removeeditableItem = this.state.item.filter((val, index) => {
             return id !== index + val;
@@ -77,7 +76,9 @@ class Todo extends React.Component {
                                     </form>
                                 </div>
                                 <div className="col-lg-12 mt-3">
+                                    <ErrorBoundary>
                                         <DisplayTodo data={{ items: this.state.item, delete: this.delete, edit: this.edit }} />
+                                    </ErrorBoundary>  
                                     <p className="text-center btn btn-primary" onClick={this.removeAll}>Remove All</p>
                                 </div>
                             </div>
