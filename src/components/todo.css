@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+::selection { background: yellow; color: black;}
 body{
     background-color: #347C98;
     font-family: Josefin Sans;
