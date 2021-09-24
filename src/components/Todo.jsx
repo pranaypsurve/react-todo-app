@@ -13,7 +13,7 @@ class Todo extends React.Component {
             edit: false,
             currTime:new Date().toLocaleTimeString(),
             currDate:new Date().toLocaleDateString(),
-            featuresApi:["Edit","Delete","One Click Remove All,Simple UI"]
+            featuresApi:["Edit","Delete","One Click Remove All","Simple UI"]
         }
     }
     handleTodoAdd = (e) => {
