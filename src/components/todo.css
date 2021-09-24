@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 body{
     background-color: #347C98;
+    font-family: Josefin Sans;
 }
 h1,h2,h3,h4,h5,h6{
     color: #FCCB1D;
@@ -36,7 +38,28 @@ h1,h2,h3,h4,h5,h6{
 }
 .todolist i{
     color:#C21460;
-    margin: auto;
     cursor: pointer;
     text-align: center;
+
+    display: flex;
+    align-items: center;
+    
+}
+.todolist i:nth-child(1){
+    padding-left: 8px;
+}
+.todolist i:nth-child(3){
+    padding-left: 0;
+    padding-right: 8px;
+    justify-content: flex-end;
+}
+.features{
+    padding: 10px 30px;
+    border: 15px solid;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+.features ol li{
+    font-size: 25px;
+    color: rgb(247, 240, 212);
 }

@@ -10,7 +10,10 @@ class Todo extends React.Component {
             item: window.localStorage.getItem('items') ? JSON.parse(window.localStorage.getItem('items')) : [],
             name: '',
             sectionTitle: "Todo App Developed by Pranay",
-            edit: false
+            edit: false,
+            currTime:new Date().toLocaleTimeString(),
+            currDate:new Date().toLocaleDateString(),
+            featuresApi:["Edit","Delete","One Click Remove All"]
         }
     }
     handleTodoAdd = (e) => {
@@ -60,12 +63,30 @@ class Todo extends React.Component {
             <section className="todo">
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-lg-12">
+                        <div className="col-lg-4">
+                            <div className="text-center p-4  float-lg-start" style={{ color: '#F7F0D4', fontSize: '25px', fontWeight: 'bold' }}>
+                               Date : {this.state.currDate}
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
                             <div className="text-center p-4" style={{ color: '#F7F0D4', fontSize: '25px', fontWeight: 'bold' }}>
                                 {this.state.sectionTitle}
                             </div>
                         </div>
-                        <div className="col-lg-4 m-auto">
+                        <div className="col-lg-4">
+                            <div className="text-center p-4 float-lg-end" style={{ color: '#F7F0D4', fontSize: '25px', fontWeight: 'bold' }}>
+                                Time : {this.state.currTime}
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
+                            <div className="features border-warning">
+                                <h2>Features - Todo App</h2>
+                                <ol className="m-0">
+                                {this.state.featuresApi.map((item,index)=>{return <li key={index}>{item}</li>})}
+                                </ol>
+                            </div>
+                        </div>
+                        <div className="col-lg-4">
                             <div className="row todo-container">
                                 <div className="col-lg-12">
                                     <form onSubmit={this.handleTodoAdd}>
@@ -87,6 +108,13 @@ class Todo extends React.Component {
                 </div>
             </section>
         );
+    }
+    // life cycle method 
+    componentDidMount(){
+        this.intervalId = setInterval(()=>{ this.setState({currTime:new Date().toLocaleTimeString(),currDate:new Date().toLocaleDateString()})  },1000);
+    }
+    componentWillUnmount(){
+        clearInterval(this.intervalId); 
     }
 }
 export default Todo;
